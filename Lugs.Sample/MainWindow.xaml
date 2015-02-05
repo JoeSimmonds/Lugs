@@ -1,0 +1,51 @@
+﻿<Window x:Class="Lugs.Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="292" Width="525">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock VerticalAlignment="Top" Text="Group:" Grid.Row="0" Grid.Column="0"/>
+        <TextBox  VerticalAlignment="Top" Text="{Binding GroupName}" Grid.Row="0" Grid.Column="1"/>
+        <Button Grid.Row="0" Grid.Column="2" Command="{Binding GroupExistsCommand}">-&gt;</Button>
+        <TextBlock Text="{Binding GroupFeedBack}"  VerticalAlignment="Top" Grid.Row="0" Grid.Column="3"/>
+
+
+        <TextBlock VerticalAlignment="Top" Text="User:" Grid.Row="1" Grid.Column="0"/>
+        <TextBox  VerticalAlignment="Top" Text="{Binding UserName}" Grid.Row="1" Grid.Column="1"/>
+        <Button Grid.Row="1" Grid.Column="2" Command="{Binding UserExistsCommand}">-&gt;</Button>
+        <TextBlock Text="{Binding UserFeedBack}"  VerticalAlignment="Top" Grid.Row="1" Grid.Column="3"/>
+        
+        <Button Grid.Column="1" Grid.Row="2" Command="{Binding TestIsInGroupCommand}">Test is in group</Button>
+        <TextBlock Text="{Binding IsInGroupFeedback}"  VerticalAlignment="Top" Grid.Row="2" Grid.Column="3"/>
+
+        <Button Grid.Column="1" Grid.Row="3" Command="{Binding AddUserToGroupCommand}">Add user to group</Button>
+        <TextBlock Text="{Binding AddToGroupFeedback}"  VerticalAlignment="Top" Grid.Row="3" Grid.Column="3"/>
+
+        <Button Grid.Column="1" Grid.Row="4" Command="{Binding CreateUserCommand}">Create User</Button>
+        <TextBlock Text="{Binding CreateUserFeedback}"  VerticalAlignment="Top" Grid.Row="4" Grid.Column="3"/>
+
+        <Button Grid.Column="1" Grid.Row="5" Command="{Binding GetUsersInGroupCommand}">Get Users In Group</Button>
+        <TextBlock Text="{Binding GetUsersInGroupFeedback}"  VerticalAlignment="Top" Grid.Row="5" Grid.Column="3"/>
+
+        <TextBlock VerticalAlignment="Top" Text="Password:" Grid.Row="6" Grid.Column="0"/>
+        <TextBox  VerticalAlignment="Top" Text="{Binding Password}" Grid.Row="6" Grid.Column="1"/>
+        <Button Grid.Row="6" Grid.Column="2" Command="{Binding SetPasswordCommand}">Set</Button>
+        <TextBlock Text="{Binding PasswordFeedBack}"  VerticalAlignment="Top" Grid.Row="6" Grid.Column="3"/>
+    </Grid>
+</Window>
